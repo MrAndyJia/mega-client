@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="dtCompany">
+    <Property name="matchType">com.bstek.bdf2.core.model.DefaultCompany</Property>
+    <PropertyDef name="id">
+      <Property/>
+      <Property name="label">组织编码</Property>
+    </PropertyDef>
+    <PropertyDef name="name">
+      <Property/>
+      <Property name="label">公司名称</Property>
+    </PropertyDef>
+    <PropertyDef name="desc">
+      <Property/>
+      <Property name="label">描述</Property>
+    </PropertyDef>
+    <PropertyDef name="startTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">授权开始</Property>
+    </PropertyDef>
+    <PropertyDef name="EndTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">授权结束</Property>
+    </PropertyDef>
+    <PropertyDef name="address">
+      <Property/>
+      <Property name="label">详细地址</Property>
+    </PropertyDef>
+    <PropertyDef name="contactUser">
+      <Property/>
+      <Property name="label">联系人</Property>
+    </PropertyDef>
+    <PropertyDef name="contactPhone">
+      <Property/>
+      <Property name="label">联系电话</Property>
+    </PropertyDef>
+  </DataType>
+</Model>

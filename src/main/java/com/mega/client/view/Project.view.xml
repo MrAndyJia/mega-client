@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="ds">
+      <Property name="dataType">[dtProjectGroup]</Property>
+      <Property name="dataProvider">soft.projectPR#getProjectGroup</Property>
+    </DataSet>
+    <SplitPanel>
+      <Property name="position">200</Property>
+      <MainControl>
+        <DataBlockView>
+          <Property name="dataSet">ds</Property>
+          <Property name="blockWidth">100</Property>
+          <Property name="blockHeight">100</Property>
+        </DataBlockView>
+      </MainControl>
+      <SideControl>
+        <DataTree>
+          <Property name="dataSet">ds</Property>
+          <BindingConfigs>
+            <BindingConfig>
+              <Property name="hasChild">true</Property>
+              <Property name="name">group</Property>
+              <Property name="labelProperty">groupName</Property>
+              <Property name="icon">./images/xiangmu.png</Property>
+              <Property name="expandLevel">2</Property>
+              <BindingConfig>
+                <Property name="hasChild">true</Property>
+                <Property name="childrenProperty">ieds</Property>
+                <Property name="labelProperty">name</Property>
+                <Property name="name">ied</Property>
+                <Property name="icon">./images/fuwuqi.png</Property>
+                <Property name="expandLevel">2</Property>
+                <BindingConfig>
+                  <Property name="childrenProperty">ports</Property>
+                  <Property name="hasChild">true</Property>
+                  <Property name="labelProperty">name</Property>
+                  <Property name="name">port</Property>
+                  <Property name="icon">./images/luyouqi2.png</Property>
+                  <BindingConfig>
+                    <Property name="childrenProperty">devices</Property>
+                    <Property name="labelProperty">title</Property>
+                    <Property name="name">device</Property>
+                    <Property name="icon">./images/luyouqi.png</Property>
+                    <Property name="tipProperty">name</Property>
+                  </BindingConfig>
+                </BindingConfig>
+              </BindingConfig>
+            </BindingConfig>
+          </BindingConfigs>
+        </DataTree>
+      </SideControl>
+    </SplitPanel>
+  </View>
+</ViewConfig>

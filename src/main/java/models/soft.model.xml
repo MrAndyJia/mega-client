@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="dtProjectGroup">
+    <Property name="matchType">com.mega.client.model.ProjectGroup</Property>
+    <PropertyDef name="pkId">
+      <Property></Property>
+      <Property name="label">主键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="companyId">
+      <Property></Property>
+      <Property name="label">公司编码</Property>
+    </PropertyDef>
+    <PropertyDef name="groupId">
+      <Property></Property>
+      <Property name="label">项目名称</Property>
+    </PropertyDef>
+    <PropertyDef name="projectName">
+      <Property></Property>
+      <Property name="label">项目名称</Property>
+    </PropertyDef>
+    <PropertyDef name="groupName">
+      <Property></Property>
+      <Property name="label">项目名称</Property>
+    </PropertyDef>
+    <PropertyDef name="iedUrl">
+      <Property></Property>
+      <Property name="label">服务器路径</Property>
+    </PropertyDef>
+    <PropertyDef name="ieds">
+      <Property name="dataType">[dtProjectIed]</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="dtProjectIed">
+    <Property name="matchType">com.mega.client.model.ProjectIed</Property>
+    <PropertyDef name="pkId">
+      <Property></Property>
+      <Property name="label">主键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="groupId">
+      <Property></Property>
+      <Property name="label">外键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="id">
+      <Property></Property>
+      <Property name="label">ID</Property>
+    </PropertyDef>
+    <PropertyDef name="name">
+      <Property></Property>
+      <Property name="label">服务器名</Property>
+    </PropertyDef>
+    <PropertyDef name="ip">
+      <Property></Property>
+      <Property name="label">IP地址</Property>
+    </PropertyDef>
+    <PropertyDef name="timestamp">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="description">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="address">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="personnel">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="telphone">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="valid">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="watchdoginterval">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="manufacture">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="guarantee">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="series">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="model">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="parametric">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="remark">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="factory">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="factorytel">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="factoryaddress">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="productimagename">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="structureimagename">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="ports">
+      <Property name="dataType">[dtProjectIedPort]</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="dtProjectIedPort">
+    <Property name="matchType">com.mega.client.model.ProjectIedPort</Property>
+    <PropertyDef name="pkId">
+      <Property></Property>
+      <Property name="label">主键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="iedId">
+      <Property></Property>
+      <Property name="label">服务器ID</Property>
+    </PropertyDef>
+    <PropertyDef name="com">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="name">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="mode">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="baudrate">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="databits">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="stopbits">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="parity">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="flowcontrol">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="delay">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="valid">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="devices">
+      <Property name="dataType">[dtProjectDevice]</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="dtProjectDevice">
+    <Property name="creationType">com.mega.client.model.ProjectDevice</Property>
+    <PropertyDef name="pkId">
+      <Property></Property>
+      <Property name="label">主键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="portId">
+      <Property></Property>
+      <Property name="label">外键ID</Property>
+    </PropertyDef>
+    <PropertyDef name="name">
+      <Property></Property>
+      <Property name="label">设备名称</Property>
+    </PropertyDef>
+    <PropertyDef name="address">
+      <Property></Property>
+      <Property name="label">地址</Property>
+    </PropertyDef>
+    <PropertyDef name="libname">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="cfgname">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="valid">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="title">
+      <Property></Property>
+      <Property name="label">设备名称</Property>
+    </PropertyDef>
+  </DataType>
+</Model>

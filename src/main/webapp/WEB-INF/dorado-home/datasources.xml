@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bdf="http://www.bstek.com/bdf/schema"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.bstek.com/bdf/schema http://www.bstek.com/dorado/schema/bdf2.0.xsd ">
+
+	<bean id="bdf2.jdbcTransactionManager"
+		class="com.bstek.bdf2.core.orm.transaction.JdbcTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven proxy-target-class="true"
+		transaction-manager="bdf2.jdbcTransactionManager" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url" value="${jdbc.url}" />
+		<property name="driverClassName" value="${jdbc.DriverClass}" />
+		<property name="username" value="${jdbc.userName}" />
+		<property name="password" value="${jdbc.passWord}" />
+		<property name="minIdle" value="10" />
+		<property name="maxActive" value="15" />
+		<property name="maxWait" value="1000" />
+		<property name="removeAbandonedTimeout" value="60" />
+		<property name="removeAbandoned" value="true" />
+		<property name="logAbandoned" value="true" />
+	</bean>
+	<bean parent="bdf2.dataSourceRegister">
+		<property name="dataSource" ref="dataSource" />
+		<property name="name" value="${jdbc.sourceName}" />
+		<property name="asDefault" value="true" />
+	</bean>
+
+	<bean id="sessionFactory" parent="bdf2.sessionFactory">
+		<property name="dataSourceName" value="${jdbc.sourceName}" />
+		<property name="entityInterceptor" ref="bdf2.unByteCodeProxyInterceptor" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl}</prop>
+			</props>
+		</property>
+		<property name="useTransactionAwareDataSource">
+            <value>true</value>
+        </property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.mega.client.model</value>
+			</list>
+		</property>
+	</bean>
+	
+<!-- 	<bean id ="bdf2.transationInterceptor" class = ""> -->
+	
+<!-- 	</bean> -->
+	
+	<bdf:anonymous-url urlPattern="/*.jsp" />
+	<bdf:anonymous-url urlPattern="/*.html" />
+	<bdf:anonymous-url urlPattern="/css/**" />
+	<bdf:anonymous-url urlPattern="/resources/**" />
+	<bdf:anonymous-url urlPattern="/common/**" />
+	<bdf:anonymous-url urlPattern="/images/**" />
+	<bdf:anonymous-url urlPattern="/js/**" />
+</beans>

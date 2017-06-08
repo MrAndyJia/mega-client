@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="ds">
+      <Property name="pageSize">20</Property>
+      <Property name="dataProvider">manager.companyPR#getAll</Property>
+      <Property name="dataType">[dtCompany]</Property>
+    </DataSet>
+    <Container layout="hbox">
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+      <Button/>
+    </Container>
+    <ToolBar>
+      <ToolBarButton>
+        <Property name="caption">添加</Property>
+        <Property name="exClassName">yellow-btn</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">修改</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">删除</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">view.get(&quot;#ajaxCreateProject&quot;).set(&quot;parameter&quot;,&quot;soft&quot;).execute(function(result){&#xD;
+	if(!result) result = &quot;生成成功！&quot;&#xD;
+	dorado.MessageBox.alert(result);&#xD;
+});</ClientEvent>
+        <Property name="caption">初始化项目</Property>
+      </ToolBarButton>
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+      <Button>
+        <Property name="caption">测试按钮</Property>
+      </Button>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">ds</Property>
+      <Property name="readOnly">true</Property>
+      <RowNumColumn/>
+      <DataColumn name="id">
+        <Property name="property">id</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="name">
+        <Property name="property">name</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="desc">
+        <Property name="property">desc</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="startTime">
+        <Property name="property">startTime</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="EndTime">
+        <Property name="property">EndTime</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="address">
+        <Property name="property">address</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="contactUser">
+        <Property name="property">contactUser</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="contactPhone">
+        <Property name="property">contactPhone</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+    </DataGrid>
+    <ToolBar layoutConstraint="bottom">
+      <Fill/>
+      <DataPilot>
+        <Property name="dataSet">ds</Property>
+        <Property name="itemCodes">pages,pageSize</Property>
+      </DataPilot>
+    </ToolBar>
+    <AjaxAction id="ajaxCreateProject">
+      <Property name="service">manager.companyPR#createProject</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>
