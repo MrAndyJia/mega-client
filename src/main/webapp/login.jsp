@@ -20,7 +20,6 @@
 	<div class="login-top">
 		<h1>用户登录</h1>
 		<form method="post" action="security_check_" onsubmit="return check()" >
-<!-- 		<form method="post" action="security_check_" > -->
 			<input type="text" id = "username_" name = "username_" value="帐号……" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 			<input type="password" id = "password_" name = "password_"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 		    <div class="forgot">
@@ -65,7 +64,7 @@
 <div class="copyright">
 	<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="#">www.megasoft.com</a></p>
 </div>
-
+</body>
 <script type="text/javascript">
 	function check(){
 		var text1 = document.getElementById("username_").value;
@@ -85,5 +84,4 @@
    		}
 	}
 </script>
-</body>
 </html>
